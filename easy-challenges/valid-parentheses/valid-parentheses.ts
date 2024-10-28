@@ -35,3 +35,19 @@ function isValid(s: string): boolean {
 
 
 isValid(fourthS);
+
+// Optimized solution
+// let stack: string[] = [];
+//     let matchingBrackets: { [key: string]: string } = { ")": "(", "]": "[", "}": "{" };
+
+//     for (let char of s) {
+//         if (char === "(" || char === "[" || char === "{") {
+//             stack.push(char);
+//         } else if (stack.length === 0 || stack[stack.length - 1] !== matchingBrackets[char]) {
+//             return false;
+//         } else {
+//             stack.pop();
+//         }
+//     }
+
+//     return stack.length === 0;
