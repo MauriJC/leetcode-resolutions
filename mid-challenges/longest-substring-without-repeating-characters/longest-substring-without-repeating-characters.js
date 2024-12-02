@@ -22,3 +22,25 @@ function lengthOfLongestSubstring(s) {
 }
 ;
 lengthOfLongestSubstring("pwwkew");
+/**
+ * Solucion optima
+ *
+ * function lengthOfLongestSubstring(s: string): number {
+    let maxLength = 0;        // Longitud máxima encontrada
+    let start = 0;            // Inicio de la ventana
+    const seen = new Set();   // Conjunto para caracteres en la ventana
+
+    for (let end = 0; end < s.length; end++) { // Recorremos con el puntero `end`
+        while (seen.has(s[end])) {             // Si encontramos duplicado
+            seen.delete(s[start]);            // Quitamos el carácter al inicio
+            start++;                          // Contraemos la ventana
+        }
+        seen.add(s[end]);                     // Agregamos el nuevo carácter
+        maxLength = Math.max(maxLength, end - start + 1); // Actualizamos el máximo
+    }
+
+    return maxLength;
+}
+
+ *
+ */ 
